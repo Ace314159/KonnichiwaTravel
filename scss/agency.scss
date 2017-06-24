@@ -255,6 +255,8 @@ section {
     .portfolio-item {
         margin: 0 0 15px;
         right: 0;
+        min-height:200px;
+        max-height:200px;
         .portfolio-link {
             display: block;
             position: relative;
