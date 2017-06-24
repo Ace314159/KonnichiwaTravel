@@ -52,9 +52,6 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden">
-                        <a href="#page-top"></a>
-                    </li>
                     <li>
                         <a class="page-scroll" href="translations.html">Translations</a>
                     </li>
@@ -67,13 +64,14 @@
                     <li>
                         <a class="page-scroll" href="sign_up.html">Sign up</a>
                     </li>
-                    <li class="select-place-li">
-                        <select class="selectpicker" data-live-search="true" id="select-place" title="Where do you want to go?" data-style="btn-primary">
+                    <li>
+                        <select class="selectpicker" data-live-search="true" id="select-place" title="Where do you want to go?" data-style="btn-primary" data-width="css-width">
                             <option>Bangalore</option>
                             <option>Chennai</option>
                             <option>New Delhi</option>
                             <option>Hyderabad</option>
                         </select>
+                        <div id="select-place-space"></div>
                     </li>
                 </ul>
             </div>

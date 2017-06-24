@@ -1,22 +1,104 @@
-#select-place-li {
-	width: auto;
-}
-
 #select-place {
 	margin-bottom: 30px;
 	width: 100%;
 }
 
-button[data-id="select-place"][aria-expanded="true"]:hover {
-	background-color: #fec503 !important;
-    border-color: #f6bf01 !important;
-}
-
+button[data-id="select-place"]:hover,
+button[data-id="select-place"]:focus,
 button[data-id="select-place"]:active {
+	color: white !important;
 	background-color: #fec503 !important;
-    border-color: #f6bf01 !important;
+	border-color: #f6bf01 !important;
 }
 
-#select-place option {
+button[data-id="select-place"] {
+	color: white !important;
+	background-color: #fed136 !important;
+	border-color: #fed136 !important;
+}
+
+.bootstrap-select {
+	width: auto !important;
+	left: 15px;
+	/*-webkit-animation: move-select-place-up 0.2s 1;
+	animation: move-select-place-up 0.2s 1;*/
+	top: 7px;
+}
+
+@media (max-width: 767px) {
+	.bootstrap-select {
+		left: 13px;
+		bottom: 5px;
+		width: 267.19px !important;
+	}
+
+	#select-place-space {
+		height: 10px;
+	}
+}
+
+@media (max-width: 1199px) and (min-width: 768px) {
+	.nav > li > a,
+	button[data-id="select-place"] {
+		padding-left: 9px;
+		padding-right: 9px;
+	}
+
+	.nav {
+		float: left !important;
+	}
+
+	.bootstrap-select {
+		width: 267.19px !important;
+	}
+}
+
+@media (max-width: 1250px) and (min-width: 1200px) {
+	.nav > li > a {
+		padding-left: 13px;
+		padding-right: 13px;
+		margin-right: 10px;
+	}
+
+	.bootstrap-select {
+		left: 15px;
+	}
+
+	.nav {
+		margin-right: 0px;
+	}
+}
+
+/*@keyframes move-select-place-down {
+    from {top: 7px;}
+    to {top: 7px;}
+}
+
+@keyframes move-select-place-up {
+    from {top: 7px;}
+    to {top: 7px;}
+}*/
+
+/*.navbar.affix button[data-id="select-place"] {
+	-webkit-animation: move-select-place-down 0.2s 1;
+	animation: move-select-place-down 0.2s 1;
+	top: 7px;
+}*/
+
+
+.dropdown-menu li.active a {
+	background-color: #fed136 !important;
+}
+
+.dropdown-menu li.active a span.text {
+	color: white !important;
+
+}
+
+span.text {
+	color: #fed136;
+}
+
+button[data-id="select-place"] option {
 	color: black;
 }
