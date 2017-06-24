@@ -1,0 +1,16 @@
+.navbar {
+	font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 14pt;
+	border: none;
+	padding: 5px;
+}
+
+.select-place {
+	width: 300px;
+}
+
+@media(min-width: 768px) {}
+	.select-place {
+		margin-top: 9px;
+	}
+}

@@ -1,16 +1,22 @@
-.navbar {
-	font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-	font-size: 14pt;
-	border: none;
-	padding: 5px;
+#select-place-li {
+	width: auto;
 }
 
-.select-place {
-	width: 300px;
+#select-place {
+	margin-bottom: 30px;
+	width: 100%;
 }
 
-@media(min-width: 768px) {}
-	.select-place {
-		margin-top: 9px;
-	}
+button[data-id="select-place"][aria-expanded="true"]:hover {
+	background-color: #fec503 !important;
+    border-color: #f6bf01 !important;
+}
+
+button[data-id="select-place"]:active {
+	background-color: #fec503 !important;
+    border-color: #f6bf01 !important;
+}
+
+#select-place option {
+	color: black;
 }
