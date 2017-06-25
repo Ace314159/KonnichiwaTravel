@@ -306,6 +306,12 @@ section h3.section-subheading {
   margin: 0 0 15px;
   right: 0;
 }
+#portfolio .portfolio-image {
+  min-height:200px;
+  max-height:200px; 
+  min-width:360px;
+  max-width:360px; 
+}
 #portfolio .portfolio-item .portfolio-link {
   display: block;
   position: relative;
