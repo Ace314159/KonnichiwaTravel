@@ -1,0 +1,50 @@
+#main {
+	margin-top: -30px;
+}
+
+.select-category {
+	left: 0px !important;
+	top: 0px !important;
+}
+
+.select-category {
+	margin-bottom: 0px;
+}
+
+#language {
+	bottom: 6px;
+}
+
+#results {
+	-webkit-column-count: 3; /* Chrome, Safari, Opera */
+    -moz-column-count: 3; /* Firefox */
+    column-count: 3;
+}
+
+.translation a {
+	color: #333;
+}
+
+.category-name {
+	font-weight: bold;
+	font-size: 3rem;
+}
+
+.original:hover,
+.translated:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.translation {
+	margin-bottom: 30px;
+	overflow: hidden; /* Fix for firefox and IE 10-11  */
+	-webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
+	page-break-inside: avoid; /* Firefox */
+	break-inside: avoid; /* IE 10+ */
+	break-inside: avoid-column;
+}
+
+.translated {
+	font-weight: bold;
+}
