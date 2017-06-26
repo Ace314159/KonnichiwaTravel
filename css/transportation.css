@@ -1,0 +1,16 @@
+.map{
+	border: 1px solid black;
+	margin-left: 15px;
+	width: 90%;
+	height:300px;
+	display: block;
+}
+.input-group{
+		display: inline-block;
+		margin-left: 15px;
+
+}
+.perkm{
+	font-size: 20px;
+
+}
