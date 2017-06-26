@@ -3,22 +3,29 @@
 }
 
 .select-category {
-	left: 0px !important;
-	top: 0px !important;
+	left: -1px !important;
+	top: 2px !important;
+	clear: both;
 }
 
-.select-category {
-	margin-bottom: 0px;
+.input-group {
+	display: inline-block;
+}
+
+#phrase {
+	float: right;
+	display: inline-block;
 }
 
 #language {
-	bottom: 6px;
+	clear: both;
+	display: inline-block;
 }
 
 #results {
-	-webkit-column-count: 3; /* Chrome, Safari, Opera */
-    -moz-column-count: 3; /* Firefox */
-    column-count: 3;
+	-webkit-columns: 3 200px; /* Chrome, Safari, Opera */
+    -moz-columns: 3 200px; /* Firefox */
+    column-count: 3 200px;
 }
 
 .translation a {
