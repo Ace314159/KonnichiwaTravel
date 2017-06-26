@@ -1,25 +1,28 @@
 #main {
-	margin-top: -30px;
+	padding-top: 100px;
 }
 
-.select-category {
-	left: -1px !important;
-	top: 2px !important;
-	clear: both;
+@media (min-width: 768px) and (max-width: 992px) {
+	#main {
+		padding-top: 150px !important;
+	}
 }
 
-.input-group {
-	display: inline-block;
-}
-
+#category,
+#language,
 #phrase {
-	float: right;
-	display: inline-block;
+	font-size: 1.5em !important;
+	height: 46px !important;
 }
 
-#language {
-	clear: both;
-	display: inline-block;
+@media (min-width: 768px) {
+	#language {
+		right: 11px !important;
+	}
+
+	#category {
+		right: 22px !important;
+	}
 }
 
 #results {

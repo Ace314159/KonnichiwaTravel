@@ -22,11 +22,12 @@ button[data-id="select-place"] {
 	left: 15px;
 	/*-webkit-animation: move-select-place-up 0.2s 1;
 	animation: move-select-place-up 0.2s 1;*/
-	top: 6px;
+	top: 3px;
 }
 
 .item,
 .default.text {
+	line-height: normal;
 	font-size: 1.3rem !important;
 }
 
