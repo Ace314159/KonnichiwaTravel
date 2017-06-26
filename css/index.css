@@ -29,6 +29,12 @@ button[data-id="select-place"] {
 	font-size: 1.3rem !important;
 }
 
+
+#about {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
 @media (max-width: 767px) {
 	.ui.search.selection.dropdown {
 		left: 13px;
