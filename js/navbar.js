@@ -15,3 +15,7 @@ $(window).ready(function() {
 		});
 	});
 });
+
+function placeChange() {
+	
+}
