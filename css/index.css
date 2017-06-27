@@ -17,15 +17,17 @@ button[data-id="select-place"] {
 	border-color: #fed136 !important;
 }
 
-.ui.search.selection.dropdown {
+.nav .ui.search.selection.dropdown {
 	width: auto !important;
 	left: 15px;
 	/*-webkit-animation: move-select-place-up 0.2s 1;
 	animation: move-select-place-up 0.2s 1;*/
-	top: 6px;
+	top: 3px;
 }
 
-.item {
+.item,
+.default.text {
+	line-height: normal;
 	font-size: 1.3rem !important;
 }
 
@@ -36,7 +38,7 @@ button[data-id="select-place"] {
 }
 
 @media (max-width: 767px) {
-	.ui.search.selection.dropdown {
+	.nav .ui.search.selection.dropdown {
 		left: 13px;
 		bottom: 5px;
 		width: 267.19px !important;
@@ -58,7 +60,7 @@ button[data-id="select-place"] {
 		float: left !important;
 	}
 
-	.ui.search.selection.dropdown {
+	.nav .ui.search.selection.dropdown {
 		width: 267.19px !important;
 	}
 }
@@ -70,7 +72,7 @@ button[data-id="select-place"] {
 		margin-right: 10px;
 	}
 
-	.ui.search.selection.dropdown {
+	.nav .ui.search.selection.dropdown {
 		left: 15px;
 	}
 

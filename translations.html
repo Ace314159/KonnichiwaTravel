@@ -67,12 +67,8 @@
                         <a class="page-scroll" href="sign_up.html">Sign up</a>
                     </li>
                     <li>
-                        <select class="ui search selection dropdown" id="select-place">
+                        <select class="ui search selection dropdown select-place" id="select-place">
                             <option value="">Where do you want to go?</option>
-                            <option value="India">Bangalore</option>
-                            <option value="India">Chennai</option>
-                            <option value="India">New Delhi</option>
-                            <option value="India">Hyderabad</option>
                         </select>
                         <div id="select-place-space"></div>
                     </li>
@@ -87,98 +83,32 @@
     <section id="main">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="input-group">
-                        <input id="phrase" type="text" class="form-control" aria-label="..." placeholder="Enter the phrase">
-                        <div class="input-group-btn" id="language">
-                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expandTranslatedguage>Translated Language <span class="caret"></span></button>
-                            <ul class="dropdown-menu">
-                              <li><a href="#">Hindia</a></li>
-                              <li><a href="#">Telugu</a></li>
-                              <li><a href="#">Tamil</a></li>
-                            </ul>
-                        </div><!-- /btn-group -->
-                        <select class="ui search selection dropdown select-category" id="select-category">
-                            <option value="">Category</option>
-                            <option>Food</option>
-                            <option>Transportation</option>
-                            <option>Greetings</option>
-                        </select>
-                    </div><!-- /input-group -->
+                <div class="col-lg-12" id="search">
+                    <div class="ui form">
+                        <div class="3 equal width fields">
+                            <div class="field">
+                                <input id="phrase" type="text" aria-label="..." placeholder="Enter the phrase you want to translate">
+                            </div>
+                            <div class="field">
+                                <div class="ui search selection dropdown language" id="language">
+                                    <input type="hidden" name="language">
+                                    <i class="dropdown icon"></i>
+                                    <div class="default text">Please select a place</div>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="ui search selection dropdown category" id="category">
+                                    <input type="hidden" name="category">
+                                    <i class="dropdown icon"></i>
+                                    <div class="default text">All Categories</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div><!-- /.col-lg-12 -->
             </div>
             <br>    
             <div id="results" class="col-lg-12">
-                <div>
-                    <p class="category-name">Category 1</p>
-                </div>
-                <div class="translation">
-                    <p class="original">English</p>
-                    <p class="translated">Translated</p>
-                </div>
-                <div class="translation">
-                    <p class="original">English</p>
-                    <p class="translated">Translated</p>
-                </div>
-                <div class="translation">
-                    <p class="original">English</p>
-                    <p class="translated">Translated</p>
-                </div>
-                <div class="translation">
-                    <p class="original">English</p>
-                    <p class="translated">Translated</p>
-                </div>
-                <div class="translation">
-                    <p class="original">English</p>
-                    <p class="translated">Translated</p>
-                </div>
-                <div class="translation">
-                    <p class="original">English</p>
-                    <p class="translated">Translated</p>
-                </div>
-                <div class="translation">
-                    <p class="original">English</p>
-                    <p class="translated">Translated</p>
-                </div>
-                <div class="translation">
-                    <p class="original">English</p>
-                    <p class="translated">Translated</p>
-                </div>
-                <div>
-                    <p class="category-name">Category 2</p>
-                </div>
-                <div class="translation">
-                    <p class="original">English</p>
-                    <p class="translated">Translated</p>
-                </div>
-                <div class="translation">
-                    <p class="original">English</p>
-                    <p class="translated">Translated</p>
-                </div>
-                <div class="translation">
-                    <p class="original">English</p>
-                    <p class="translated">Translated</p>
-                </div>
-                <div class="translation">
-                    <p class="original">English</p>
-                    <p class="translated">Translated</p>
-                </div>
-                <div class="translation">
-                    <p class="original">English</p>
-                    <p class="translated">Translated</p>
-                </div>
-                <div class="translation">
-                    <p class="original">English</p>
-                    <p class="translated">Translated</p>
-                </div>
-                <div class="translation">
-                    <p class="original">English</p>
-                    <p class="translated">Translated</p>
-                </div>
-                <div class="translation">
-                    <p class="original">English</p>
-                    <p class="translated">Translated</p>
-                </div>
             </div>
         </div>
     </section>
@@ -200,11 +130,25 @@
     <!--<script src="js/agency.min.js"></script>-->
 
 
-    <!-- Semanti UI Dropdown -->
+    <!-- Semanti UI Dropdown and Input -->
     <link href="css/dropdown.min.css" rel="stylesheet" type="text/css">
     <script src="js/dropdown.min.js" type="text/javascript"></script>
     <link href="css/transition.min.css" rel="stylesheet" type="text/css">
     <script src="js/transition.min.js" type="text/javascript"></script>
+    <link href="css/form.min.css" rel="stylesheet" type="text/css">
+    <script src="js/form.min.js" type="text/javascript"></script>
+    <!--<link href="css/input.min.css" rel="stylesheet" type="text/css">-->
+
+    <!-- Fireabse -->
+    <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+    <script>
+        var config = {
+            apiKey: " AIzaSyALamJpBy8ci66YNL_R0p4KD6zzEksAGUI>",
+            authDomain: "konnichiwa-travel.firebaseapp.com",
+            databaseURL: "https://konnichiwa-travel.firebaseio.com"
+        };
+        firebase.initializeApp(config);
+    </script>
 
     <!-- Custom JS -->
     <script src="js/translations.js" type="text/javascript"></script>
