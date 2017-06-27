@@ -73,9 +73,11 @@
                         <a class="page-scroll" href="sign_up.html">Sign up</a>
                     </li>
                     <li>
-                        <select class="ui search selection dropdown" id="select-place">
-                            <option value="">Where do you want to go?</option>
-                        </select>
+                        <div class="ui disabled search selection dropdown select-place" id="select-place">
+                            <input type="hidden" name="select-place">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Loading...</div>
+                        </div>
                         <div id="select-place-space"></div>
                     </li>
                 </ul>
@@ -103,10 +105,10 @@
                                 </div>
                             </div>
                             <div class="field">
-                                <div class="ui search selection dropdown category" id="category">
+                                <div class="ui disabled search selection dropdown category" id="category">
                                     <input type="hidden" name="category">
                                     <i class="dropdown icon"></i>
-                                    <div class="default text">All Categories</div>
+                                    <div class="default text">Loading...</div>
                                 </div>
                             </div>
                         </div>
@@ -115,72 +117,6 @@
             </div>
             <br>    
             <div id="results" class="col-lg-12">
-<<<<<<< Updated upstream
-=======
-                <div>
-                    <p class="category-name">Category 1</p>
-                </div>
-                <div class="translation">
-                    <p class="original">English</p>
-                    <p class="translated">Translated</p>
-                </div>
-                <div class="translation">
-                    <p class="original">English</p>
-                    <p class="translated">Translated</p>
-                </div>
-                <div class="translation">
-                    <p class="original">English</p>
-                    <p class="translated">Translated</p>
-                </div>
-                <div class="translation">
-                    <p class="original">English</p>
-                    <p class="translated">Translated</p>
-                </div>
-                <div class="translation">
-                    <p class="original">English</p>
-                    <p class="translated">Translated</p>
-                </div>
-                <div class="translation">
-                    <p class="original">English</p>
-                    <p class="translated">Translated</p>
-                </div>
-                
-                <div>
-                    <p class="category-name">Category 2</p>
-                </div>
-                <div class="translation">
-                    <p class="original">English</p>
-                    <p class="translated">Translated</p>
-                </div>
-                <div class="translation">
-                    <p class="original">English</p>
-                    <p class="translated">Translated</p>
-                </div>
-                <div class="translation">
-                    <p class="original">English</p>
-                    <p class="translated">Translated</p>
-                </div>
-                <div class="translation">
-                    <p class="original">English</p>
-                    <p class="translated">Translated</p>
-                </div>
-                <div class="translation">
-                    <p class="original">English</p>
-                    <p class="translated">Translated</p>
-                </div>
-                <div class="translation">
-                    <p class="original">English</p>
-                    <p class="translated">Translated</p>
-                </div>
-                <div class="translation">
-                    <p class="original">English</p>
-                    <p class="translated">Translated</p>
-                </div>
-                <div class="translation">
-                    <p class="original">English</p>
-                    <p class="translated">Translated</p>
-                </div>
->>>>>>> Stashed changes
             </div>
         </div>
     </section>
@@ -223,8 +159,8 @@
     </script>
 
     <!-- Custom JS -->
-    <script src="js/translations.js" type="text/javascript"></script>
     <script src="js/navbar.js" type="text/javascript"></script>
+    <script src="js/translations.js" type="text/javascript"></script>
 
 </body>
 

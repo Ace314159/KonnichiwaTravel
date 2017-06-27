@@ -2,6 +2,9 @@ var languages;
 var data;
 
 $(window).ready(function() {
+	$("#select-place").dropdown({
+		onChange: placeChange
+	});
 	$("#language").dropdown({
 		onChange: search
 	});
@@ -18,13 +21,19 @@ $(window).ready(function() {
 	var database = firebase.database();
 	data = database.ref("Translations/Data");
 	languages = database.ref("Translations/Languages");
+
+	data.once("value").then(function(snapshot) {
+		snapshot.forEach(function(category) {
+			$("#category .menu").append("<div class='item'>" + category.key +"</div>");
+		});
+		$("#category").removeClass("disabled");
+	});
 });
 
 function search() {
 	$("#results").html("");
 	data.once("value").then(function(snapshot) {
 		snapshot.forEach(function(category) {
-			$("#category .menu").append("<div class='item'>" + category.key +"</div>");
 			$("#results").append("<div><p class='category-name'>" + category.key +"</p></div>");
 			category.forEach(function(translations) {
 				if(translations.key == $("#language .text").html()) {
@@ -39,7 +48,7 @@ function search() {
 	});
 }
 
-function placeChange(value, text) {
+placeChange = function(value, text) {
 	languages.once("value").then(function(snapshot) {
 		snapshot.forEach(function(country) {
 			if(country.key === value) {
