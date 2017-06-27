@@ -1,3 +1,3 @@
 $(window).ready(function() {
-	$("#select-service").dropdown();
+	$("#service").dropdown();
 });

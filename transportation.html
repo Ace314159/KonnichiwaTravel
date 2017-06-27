@@ -89,14 +89,28 @@
     <section id="main">
         <div class="row">
                 <div class="col-xs-12">
-                    <div class="input-group">
-                        <select class="ui search selection dropdown select-category" id="select-service">
-                            <option>Pick a Cab Service...</option>
-                            <option>Ola</option>
-                            <option>Uber</option>
-                        </select>
-                    </div><!-- /input-group -->
-                </div>
+                    <div class="ui form">
+                        <div class="3 equal width fields">
+                             <div class="cab">
+                                <div class="ui search selection dropdown service" id="service">
+                                    <input type="hidden" name="service">
+                                    <i class="dropdown icon"></i>
+                                    <div class="default text">Pick a Cab Service</div>
+                                    <div class="menu">
+                                        <div class="item">Uber</div>
+                                        <div class="item">Ola</div>
+                                    </div>
+                                </div>  
+                            </div>
+                            <div class="location">
+                                <input id="start-location" type="text" aria-label="..." placeholder="Enter Start Location">
+                            </div>
+                            <div class="location">
+                                <input id="end-location" type="text" aria-label="..." placeholder="Enter End Location">
+                            </div>
+                           
+                        </div>
+                    </div>
                 <div class="col-xs-12 col-md-4">
                     <div class="input-group">
                     <br/>
@@ -148,7 +162,9 @@
     <link href="css/dropdown.min.css" rel="stylesheet" type="text/css">
     <script src="js/dropdown.min.js" type="text/javascript"></script>
     <link href="css/transition.min.css" rel="stylesheet" type="text/css">
-    <script src="js/transition.min.js" type="text/javascript"></script>
+    <script src="js/transition.min.js" type="text/javascript"></script>\
+    <link href="css/form.min.css" rel="stylesheet" type="text/css">
+    <script src="js/form.min.js" type="text/javascript"></script>
 
     <!-- Fireabse -->
     <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
