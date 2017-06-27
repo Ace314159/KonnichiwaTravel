@@ -26,10 +26,10 @@ button[data-id="select-place"] {
 }
 
 .item,
-.default.text {
+.text {
 	font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
 	line-height: normal;
-	font-size: 1.3rem !important;
+	font-size: 1em !important;
 }
 
 

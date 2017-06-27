@@ -23,9 +23,11 @@ $(window).ready(function() {
 	languages = database.ref("Translations/Languages");
 
 	data.once("value").then(function(snapshot) {
+		$("#category .menu").append("<div class='item'>All Categories</div>");
 		snapshot.forEach(function(category) {
 			$("#category .menu").append("<div class='item'>" + category.key +"</div>");
 		});
+		$("#category .default.text").html("All Categories");
 		$("#category").removeClass("disabled");
 	});
 });
