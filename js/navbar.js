@@ -8,14 +8,16 @@ $(window).ready(function() {
 	var places = database.ref("Places");
 
 	places.on("value", function(snapshot) {
+		$("#select-place .default.text").html("Where do you want to go?");
 		snapshot.forEach(function(country) {
 			country.forEach(function(city) {
-				$("#select-place").append("<option value='" + country.key + "'>" + city.val() + "</option");
+				$("#select-place .menu").append("<div class='item' data-value='" + country.key + "'>" + city.val() + "</div");
 			});
 		});
+		$(".select-place").removeClass("disabled");
 	});
 });
 
-function placeChange() {
+function placeChange(value, text) {
 	
 }

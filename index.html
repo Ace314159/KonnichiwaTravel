@@ -71,9 +71,11 @@
                         <a class="page-scroll" href="sign_up.html">Sign up</a>
                     </li>
                     <li>
-                        <select class="ui search selection dropdown" id="select-place">
-                            <option value="">Where do you want to go?</option>
-                        </select>
+                        <div class="ui disabled search selection dropdown select-place" id="select-place">
+                            <input type="hidden" name="select-place">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Loading...</div>
+                        </div>
                         <div id="select-place-space"></div>
                     </li>
                 </ul>
