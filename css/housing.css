@@ -1,0 +1,26 @@
+#main {
+	padding-top: 100px;
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+	#main {
+		padding-top: 150px !important;
+	}
+}
+
+#category,
+#language,
+#phrase {
+	font-size: 1.5em !important;
+	height: 46px !important;
+}
+
+@media (min-width: 768px) {
+	#language {
+		right: 11px !important;
+	}
+
+	#category {
+		right: 22px !important;
+	}
+}

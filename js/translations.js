@@ -2,9 +2,6 @@ var languages;
 var data;
 
 $(window).ready(function() {
-	$("#select-place").dropdown({
-		onChange: placeChange
-	});
 	$("#language").dropdown({
 		onChange: search
 	});
