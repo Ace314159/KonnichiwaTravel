@@ -89,61 +89,58 @@
 
     <!-- Main Section -->
     <section id="main">
-        <div class="row">
-                <div class="col-xs-12">
-                    <div class="ui form">
-                        <div class="3 equal width fields">
-                             <div class="cab">
-                                <div class="ui search selection dropdown service" id="service">
-                                    <input type="hidden" name="service">
-                                    <i class="dropdown icon"></i>
-                                    <div class="default text">Pick a Cab Service</div>
-                                    <div class="menu">
-                                        <div class="item">Uber</div>
-                                        <div class="item">Ola</div>
-                                    </div>
-                                </div>  
+        <div class="container">
+            <div class="row">
+                    <div class="col-xs-12">
+                        <div class="ui form">
+                            <div class="3 equal width fields">
+                                 <div class="field">
+                                    <div class="ui search selection dropdown service" id="service">
+                                        <input type="hidden" name="service">
+                                        <i class="dropdown icon"></i>
+                                        <div class="default text">Pick a Cab Service</div>
+                                        <div class="menu">
+                                            <div class="item">Uber</div>
+                                            <div class="item">Ola</div>
+                                        </div>
+                                    </div>  
+                                </div>
+                                <div class="field">
+                                    <input id="start-location" type="text" aria-label="..." placeholder="Enter Start Location">
+                                </div>
+                                <div class="field">
+                                    <input id="end-location" type="text" aria-label="..." placeholder="Enter End Location">
+                                </div>
+                               
                             </div>
-                            <div class="location">
-                                <input id="start-location" type="text" aria-label="..." placeholder="Enter Start Location">
-                            </div>
-                            <div class="location">
-                                <input id="end-location" type="text" aria-label="..." placeholder="Enter End Location">
-                            </div>
-                           
+                        </div>
+                    <div class="col-xs-12 col-md-4">
+                        <div class="input-group">
+                        <br/>
+                        <p class="perkm">Price per KM -- Uber:</p>
+                            <ul>
+                                <li>UberSUV:</li>
+                                <li>UberX:</li>
+                                <li>UberGO:</li>
+                                <li>UberMOTO:</li>
+                                <li>UberPOOL:</li>
+                            </ul>
+                        <p class="perkm">Price per KM -- Ola:</p>
+                            <ul>
+                                <li>Ola Prime Sudan:</li>
+                                <li>Ola Prime SUV:</li>
+                                <li>Ola Micro:</li>
+                                <li>Ola Mini:</li>
+                                <li>Ola Prime Plau:</li>
+                            </ul>
                         </div>
                     </div>
-                <div class="col-xs-12 col-md-4">
-                    <div class="input-group">
-                    <br/>
-                    <p class="perkm">Price per KM -- Uber:</p>
-                        <ul>
-                            <li>UberSUV:</li>
-                            <li>UberX:</li>
-                            <li>UberGO:</li>
-                            <li>UberMOTO:</li>
-                            <li>UberPOOL:</li>
-                        </ul>
-                    <p class="perkm">Price per KM -- Ola:</p>
-                        <ul>
-                            <li>Ola Prime Sudan:</li>
-                            <li>Ola Prime SUV:</li>
-                            <li>Ola Micro:</li>
-                            <li>Ola Mini:</li>
-                            <li>Ola Prime Plau:</li>
-                        </ul>
+                    <div class="col-xs-12 col-md-8">
+                        <div id="map"></div>
                     </div>
-                </div>
-                <div class="col-xs-12 col-md-8">
-                    <div class="map">
-                        Map
-                    </div>
-                </div>
-
-
-            </div><!-- /.col-lg-12 -->
-        </div>
-        </div>
+                </div><!-- /.col-lg-12 -->
+            </div>
+            </div>
         <br><br>      
     </section>
     
@@ -167,6 +164,10 @@
     <script src="js/transition.min.js" type="text/javascript"></script>\
     <link href="css/form.min.css" rel="stylesheet" type="text/css">
     <script src="js/form.min.js" type="text/javascript"></script>
+
+    <!-- Google Maps -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALamJpBy8ci66YNL_R0p4KD6zzEksAGUI&callback=initMap&libraries=places"
+    async defer></script>
 
     <!-- Fireabse -->
     <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>

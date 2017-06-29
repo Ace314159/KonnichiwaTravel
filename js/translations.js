@@ -2,9 +2,6 @@ var languages;
 var data;
 
 $(window).ready(function() {
-	$("#select-place").dropdown({
-		onChange: placeChange
-	});
 	$("#language").dropdown({
 		onChange: search
 	});
@@ -36,16 +33,18 @@ function search() {
 	$("#results").html("");
 	data.once("value").then(function(snapshot) {
 		snapshot.forEach(function(category) {
-			$("#results").append("<div><p class='category-name'>" + category.key +"</p></div>");
+			var trans = "<div class='translation-category'><div><p class='category-name'>" + category.key +"</p></div>";
 			category.forEach(function(translations) {
 				if(translations.key == $("#language .text").html()) {
 					translations.forEach(function(translation) {
-						$("#results").append("<div class='translation'><p class='original'>" 
+						trans += "<div class='translation'><p class='original'>" 
 							+ translation.key +"</p><p class='translated'>" 
-							+ translation.val() + "</p><span class='glyphicon glyphicon-volume-up'></span></div>");
+							+ translation.val() + "</p></div>";
 					});
 				}
 			});
+			trans += "</div>";
+			$("#results").append(trans);
 		});
 	});
 }

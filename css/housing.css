@@ -1,0 +1,55 @@
+#main {
+	padding-top: 100px;
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+	#main {
+		padding-top: 150px !important;
+	}
+}
+
+#rating-filter,
+#money-filter,
+#phrase {
+	font-size: 1.5em !important;
+	height: 46px !important;
+}
+
+#rating-filter,
+#money-filter {
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+
+#rating-filter .rating {
+	font-size: 2rem !important;
+	bottom: 100px;
+}
+
+#money-filter .rating .icon {
+	font-family: Icons;
+}
+
+#money-filter .rating .icon:before {
+	content: '\f155' !important;
+}
+
+#money-filter .rating .selected.icon,
+#money-filter .rating .selected.active.icon {
+	color: green;
+}
+
+#money-filter .rating .active.icon {
+	color: #21BA45;
+}
+
+@media (min-width: 768px) {
+	#rating-filter {
+		right: 11px !important;
+	}
+
+	#money-filter {
+		right: 22px !important;
+	}
+}
