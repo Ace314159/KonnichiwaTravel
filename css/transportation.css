@@ -1,8 +1,7 @@
-.map{
-	border: 1px solid black;
+#map{
 	margin-left: 15px;
 	width: 90%;
-	height:353px;
+	height: 353px;
 	display: block;
 }
 .input-group{
