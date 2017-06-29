@@ -42,7 +42,7 @@ function search() {
 					translations.forEach(function(translation) {
 						$("#results").append("<div class='translation'><p class='original'>" 
 							+ translation.key +"</p><p class='translated'>" 
-							+ translation.val() + "</p></div>");
+							+ translation.val() + "</p><span class='glyphicon glyphicon-volume-up'></span></div>");
 					});
 				}
 			});
