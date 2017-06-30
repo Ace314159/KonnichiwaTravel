@@ -9,7 +9,6 @@ $(document).ready(function() {
 		$("#select-place .default.text").html("Where do you want to go?");
 		snapshot.forEach(function(country) {
 			country.forEach(function(city) {
-				console.log(city.key);
 				$("#select-place .menu").append("<div class='item' id='" + country.key +"'>" + city.key + "</div");
 			});
 		});
