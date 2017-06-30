@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+  <div id="demo"></div>
+  <script>
+    function loadXMLDoc() {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          var parser;
+          var xmlDoc;
+          var text = this.responseText;
+          if (window.DOMParser) {
+            parser = new DOMParser();
+            xmlDoc = parser.parseFromString(text,"text/xml");
+          } else {
+            xmlDoc = new ActiveXObject("Microsoft.XMLDOM");
+            xmlDoc.async = false;
+            xmlDoc.loadXML(text); 
+          } 
+          document.getElementById("demo").innerHTML+=
+          xmlDoc.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+
+          document.getElementById("demo").innerHTML+= ' '+
+          xmlDoc.getElementsByTagName("country")[0].childNodes[0].nodeValue;
+
+          //document.getElementById("demo").innerHTML+= ' '+
+          var timeTags = xmlDoc.getElementsByTagName("forecast")[0].getElementsByTagName("time")
+          
+          /*for (var i = 0; i < timeTags.length; i++) {
+            document.getElementById("demo") += ' ' + timeTags[i];
+          }*/
+           document.getElementById("demo").innerHTML+= ' '+
+          xmlDoc.getElementsByTagName("time")[0].childNodes[0].nodeValue;
+        }
+      };
+      xhttp.open("GET", "t.xml", true);
+      xhttp.send();
+  }
+  loadXMLDoc();
+  </script>
+</body>
+</html>

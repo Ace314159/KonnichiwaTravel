@@ -25,6 +25,10 @@ button[data-id="select-place"] {
 	top: 3px;
 }
 
+.initial {
+	display: none;
+}
+
 .item,
 .text {
 	font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;

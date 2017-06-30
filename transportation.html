@@ -93,8 +93,8 @@
             <div class="row">
                     <div class="col-xs-12">
                         <div class="ui form">
-                            <div class="3 equal width fields">
-                                 <div class="field">
+                            <div class="2 equal width fields">
+                                <!--<div class="field">
                                     <div class="ui search selection dropdown service" id="service">
                                         <input type="hidden" name="service">
                                         <i class="dropdown icon"></i>
@@ -104,7 +104,7 @@
                                             <div class="item">Ola</div>
                                         </div>
                                     </div>  
-                                </div>
+                                </div>-->
                                 <div class="field">
                                     <input id="start-location" type="text" aria-label="..." placeholder="Enter Start Location">
                                 </div>
@@ -116,23 +116,11 @@
                         </div>
                     <div class="col-xs-12 col-md-4">
                         <div class="input-group">
-                        <br/>
-                        <p class="perkm">Price per KM -- Uber:</p>
-                            <ul>
-                                <li>UberSUV:</li>
-                                <li>UberX:</li>
-                                <li>UberGO:</li>
-                                <li>UberMOTO:</li>
-                                <li>UberPOOL:</li>
-                            </ul>
-                        <p class="perkm">Price per KM -- Ola:</p>
-                            <ul>
-                                <li>Ola Prime Sudan:</li>
-                                <li>Ola Prime SUV:</li>
-                                <li>Ola Micro:</li>
-                                <li>Ola Mini:</li>
-                                <li>Ola Prime Plau:</li>
-                            </ul>
+                            <br/>
+                            <p class="perkm">Uber:</p>
+                                <ul id="uber"></ul>
+                            <p class="perkm">Ola:</p>
+                                <ul id="ola"></ul>
                         </div>
                     </div>
                     <div class="col-xs-12 col-md-8">
@@ -166,8 +154,7 @@
     <script src="js/form.min.js" type="text/javascript"></script>
 
     <!-- Google Maps -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALamJpBy8ci66YNL_R0p4KD6zzEksAGUI&callback=initMap&libraries=places"
-    async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALamJpBy8ci66YNL_R0p4KD6zzEksAGUI&libraries=places"></script>
 
     <!-- Fireabse -->
     <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>

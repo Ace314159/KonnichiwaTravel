@@ -1,4 +1,4 @@
-$(window).ready(function() {
+$(document).ready(function() {
 	$(".card .rating").rating({
 		maxRating: 5,
 		interactive: false
