@@ -6,6 +6,7 @@ $(document).ready(function() {
 	var provider = new firebase.auth.GoogleAuthProvider();
 
 	places.on("value", function(snapshot) {
+		$("#select-place div").not(":first").empty();
 		$("#select-place .default.text").html("Where do you want to go?");
 		snapshot.forEach(function(country) {
 			country.forEach(function(city) {
@@ -13,7 +14,6 @@ $(document).ready(function() {
 			});
 		});
 		$("#select-place").removeClass("disabled");
-		$("#select-place").dropdown('refresh');
 	});
 
 	$("#login").click(function() {

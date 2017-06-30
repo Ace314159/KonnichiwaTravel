@@ -2,7 +2,10 @@
   background-color:#141414;
 }
 
-
+#map {
+  width: 100%;
+  height: 330px;
+}
 
 .row-no-gutter {
   margin-right: 0;

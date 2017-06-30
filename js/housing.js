@@ -31,6 +31,8 @@ function search() {
 }
 
 function placeChange(value, text, $element) {
+	$("#phrase").attr("placeholder", "Search for hotels");
+	$("#results").empty();
 	city = places.child($element.attr("id")).child(text).child(hotelsRef);
 	city.once("value").then(function(hotels) {
 		hotels.forEach(function(hotel) {
@@ -44,12 +46,10 @@ function placeChange(value, text, $element) {
                         "</div>" +
                         "<div class='extra content'>" +
                             "<div class='ui huge star rating' data-rating='" + hotel.val().Rating[0] + "'></div>" +
-                            "<i class='right floated green dollar icon'></i>" +
-                            "<i class='right floated green dollar icon'></i>" +
+                            "<span class='right floated'>₹" + hotel.val().Price +"</span>" +
                         "</div>" +
                     "</div>")
-			console.log(hotel.val());
 		});
+		search();
 	});
-	search();
 }

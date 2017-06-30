@@ -9,7 +9,6 @@ $(document).ready(function() {
   $(".input-group").hide();
   $('#select-place').dropdown('setting', 'onChange', placeChange);
 	$("#service").dropdown();
-  $(".select-place .selected");
 
   /*$.ajax({url: olaPricesURL,
     data: {"pickup_lat" : 12.9491416, "pickup_lng" : 77.64298, "drop_lat" : 12.96, "drop_lng" : 77.678},
