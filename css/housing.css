@@ -22,7 +22,7 @@
 	box-shadow: none;
 }
 
-.rating {
+#search .rating {
 	font-size: 2.3rem !important;
 	bottom: 5px;
 	position: relative;
