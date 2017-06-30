@@ -2,10 +2,7 @@ var languages;
 var data;
 
 $(document).ready(function() {
-	//$('#select-place').dropdown('setting', 'onChange', placeChange);
-	$('#select-place').dropdown({
-		onChange: placeChange
-	});
+	$('#select-place').dropdown('setting', 'onChange', placeChange);
 	$("#language").dropdown({
 		onChange: search
 	});
@@ -51,10 +48,10 @@ function search() {
 	});
 }
 
-function placeChange(value, text) {
+function placeChange(value, text, $element) {
 	languages.once("value").then(function(snapshot) {
 		snapshot.forEach(function(country) {
-			if(country.key === value) {
+			if(country.key === $element.attr("id")) {
 				country.forEach(function(language) {
 					if(language.key.split("~")[1] === "Default") {
 						$("#language .default.text").html(language.val());
