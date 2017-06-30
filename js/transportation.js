@@ -4,8 +4,6 @@ var startMarker, endMarker;
 var directionsDisplay;
 var uberToken = "Xop36HQP1Z2KPeRO1bvkOfnvtmfxMbb1TBEvqGib";
 var uberPricesURL = "https://api.uber.com/v1.2/estimates/price";
-var olaToken = "4e8bcd4ad3d640ff8bade717d86710c5"
-var olaPricesURL = "http://sandbox-t.olacabs.com/v1/products";
 
 $(document).ready(function() {
   $(".input-group").hide();
@@ -13,7 +11,7 @@ $(document).ready(function() {
 	$("#service").dropdown();
   $(".select-place .selected");
 
-  $.ajax({url: olaPricesURL,
+  /*$.ajax({url: olaPricesURL,
     data: {"pickup_lat" : 12.9491416, "pickup_lng" : 77.64298, "drop_lat" : 12.96, "drop_lng" : 77.678},
     //headers: {"X-APP-TOKEN" : olaToken},
     method: "GET",
@@ -23,7 +21,7 @@ $(document).ready(function() {
     error: function(xhr, status, error) {
       $(".input-group").hide();
       //alert(JSON.parse(xhr.responseText).message);
-    }});
+    }});*/
 
   initMap();
 });
@@ -44,8 +42,8 @@ function getPrices() {
   var endLat = endLoc.getPlace().geometry.location.lat();
   var endLong = endLoc.getPlace().geometry.location.lng();
   $.ajax({url: uberPricesURL,
-    data: {"start_latitude" : startLat, "statusart_longitude" : startLong, "end_latitude" : endLat, "end_longitude" : endLong},
-    headers: {"X-APP-TOKEN" : "Token " + uberToken, "Accept-Language" : "en_US", "Content-Type" : "application/json" },
+    data: {"start_latitude" : startLat, "start_longitude" : startLong, "end_latitude" : endLat, "end_longitude" : endLong},
+    headers: {"Authorization" : "Token " + uberToken, "Accept-Language" : "en_US", "Content-Type" : "application/json" },
     method: "GET",
     success: function(data, status, xhr) {
       for(var i = 0; i < data.prices.length; i ++) {

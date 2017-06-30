@@ -22,9 +22,10 @@
 	box-shadow: none;
 }
 
-#rating-filter .rating {
-	font-size: 2rem !important;
-	bottom: 100px;
+.rating {
+	font-size: 2.3rem !important;
+	bottom: 5px;
+	position: relative;
 }
 
 #money-filter .rating .icon {
