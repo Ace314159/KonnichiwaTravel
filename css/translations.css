@@ -2,15 +2,6 @@
 	padding-top: 100px;
 
 }
-body {
-    background: -webkit-linear-gradient(90deg, #2af1b2 10%, #5789e0 90%);
-    background: -moz-linear-gradient(90deg, #2af1b2 10%, #5789e0 90%);
-    background: -ms-linear-gradient(90deg, #2af1b2 10%, #5789e0 90%);
-    background: -o-linear-gradient(90deg, #2af1b2 10%, #5789e0 90%);
-    background: linear-gradient(90deg, #2af1b2 10%, #5789e0 90%);
-    font-family: 'Open Sans', sans-serif!important;
-}
-}
 
 
 @media (min-width: 768px) and (max-width: 992px) {
@@ -76,6 +67,3 @@ body {
 
 .translated {
 	font-weight: bold;
-}
-text-decoration-color: {
-    color: white;
