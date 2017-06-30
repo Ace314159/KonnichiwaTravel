@@ -1,8 +1,5 @@
-$(window).ready(function() {
-	$("#select-place").dropdown({
-		onChange: placeChange
-	});
-
+$(document).ready(function() {
+	$("#select-place").dropdown();
 
 	var database = firebase.database();
 	var places = database.ref("Places");
@@ -11,13 +8,10 @@ $(window).ready(function() {
 		$("#select-place .default.text").html("Where do you want to go?");
 		snapshot.forEach(function(country) {
 			country.forEach(function(city) {
-				$("#select-place .menu").append("<div class='item' data-value='" + country.key + "'>" + city.val() + "</div");
+				$("#select-place .menu").append("<div class='item'>" + city.val() + "</div");
 			});
 		});
-		$(".select-place").removeClass("disabled");
+		$("#select-place").removeClass("disabled");
+		$("#select-place").dropdown('refresh');
 	});
 });
-
-function placeChange(value, text) {
-	
-}
