@@ -4,23 +4,14 @@ var startMarker, endMarker;
 var directionsDisplay;
 var uberToken = "Xop36HQP1Z2KPeRO1bvkOfnvtmfxMbb1TBEvqGib";
 var uberPricesURL = "https://api.uber.com/v1.2/estimates/price";
+var olaToken = "4e8bcd4ad3d640ff8bade717d86710c5"
+var olaPricesURL = "https://sandbox-t.olacabs.com/v1/products";
+
 
 $(document).ready(function() {
   $(".input-group").hide();
   $('#select-place').dropdown('setting', 'onChange', placeChange);
 	$("#service").dropdown();
-
-  /*$.ajax({url: olaPricesURL,
-    data: {"pickup_lat" : 12.9491416, "pickup_lng" : 77.64298, "drop_lat" : 12.96, "drop_lng" : 77.678},
-    //headers: {"X-APP-TOKEN" : olaToken},
-    method: "GET",
-    success: function(data, status, xhr) {
-      console.log(data);
-    },
-    error: function(xhr, status, error) {
-      $(".input-group").hide();
-      //alert(JSON.parse(xhr.responseText).message);
-    }});*/
 
   initMap();
 });
@@ -40,14 +31,40 @@ function getPrices() {
   var startLong = startLoc.getPlace().geometry.location.lng();
   var endLat = endLoc.getPlace().geometry.location.lat();
   var endLong = endLoc.getPlace().geometry.location.lng();
+  $("#ola").empty();
+  $("#uber").empty();
+
+  $.ajax({url: "http://localhost:5000",
+    data: {"url": olaPricesURL, "pickup_lat" : startLat, "pickup_lng" : startLong, "drop_lat" : endLat, "drop_lng" : endLong},
+    headers: {"X-APP-TOKEN" : olaToken},
+    method: "GET",
+    success: function(d, status, xhr) {
+      var data = JSON.parse(d).ride_estimate;
+      console.log(data);
+      for(var i = 0; i < data.length; i++) {
+        var name = data[i].category.charAt(0).toUpperCase() + data[i].category.slice(1);
+        if(name === "Share") {
+          $("#ola").append("<li><b>" + name + "</b> : " + data[i].travel_time_min + "-" + 
+            data[i].travel_time_max + " min");
+        } else {
+          $("#ola").append("<li><b>" + name + "</b> : ₹" + data[i].amount_min + "-" + data[i].amount_max +
+            " - " + data[i].travel_time_in_minutes + " min");
+        }
+      }
+    },
+    error: function(xhr, status, error) {
+      $(".input-group").hide();
+      alert(JSON.parse(xhr.responseText.message));
+    }});
+
   $.ajax({url: uberPricesURL,
     data: {"start_latitude" : startLat, "start_longitude" : startLong, "end_latitude" : endLat, "end_longitude" : endLong},
     headers: {"Authorization" : "Token " + uberToken, "Accept-Language" : "en_US", "Content-Type" : "application/json" },
     method: "GET",
     success: function(data, status, xhr) {
       for(var i = 0; i < data.prices.length; i ++) {
-        var name = data.prices[i].display_name.charAt(0).toUpperCase() + data.prices[i].display_name.slice(1);;
-        $("#uber").append("<li>" + name +": " + data.prices[i].estimate + " - " + 
+        var name = data.prices[i].display_name.charAt(0).toUpperCase() + data.prices[i].display_name.slice(1);
+        $("#uber").append("<li><b>" + name +"</b> : " + data.prices[i].estimate + " - " + 
           Math.ceil(data.prices[i].duration/60) +" min</li>");
       }
     },
@@ -105,7 +122,7 @@ function initMap() {
 
 function placeChange(value, text) {
   var geocoder = new google.maps.Geocoder();
-  var location = text;
+  var location = value;
   geocoder.geocode( { 'address': location }, function(results, status) {
     if (status == google.maps.GeocoderStatus.OK) {
       map.fitBounds(results[0].geometry.bounds);

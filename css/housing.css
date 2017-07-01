@@ -8,6 +8,10 @@
 	}
 }
 
+.slider {
+	width: 100% !important;
+}
+
 #rating-filter,
 #money-filter,
 #phrase {
