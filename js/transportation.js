@@ -57,11 +57,12 @@ function getPrices() {
       alert(JSON.parse(xhr.responseText.message));
     }});
 
-  $.ajax({url: uberPricesURL,
-    data: {"start_latitude" : startLat, "start_longitude" : startLong, "end_latitude" : endLat, "end_longitude" : endLong},
+  $.ajax({url: '/uber.php',
+    data: {url:uberPricesURL,"start_latitude" : startLat, "start_longitude" : startLong, "end_latitude" : endLat, "end_longitude" : endLong},
     headers: {"Authorization" : "Token " + uberToken, "Accept-Language" : "en_US", "Content-Type" : "application/json" },
     method: "GET",
     success: function(data, status, xhr) {
+      data = JSON.parse(data);
       for(var i = 0; i < data.prices.length; i ++) {
         var name = data.prices[i].display_name.charAt(0).toUpperCase() + data.prices[i].display_name.slice(1);
         $("#uber").append("<li><b>" + name +"</b> : " + data.prices[i].estimate + " - " + 
