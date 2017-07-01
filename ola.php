@@ -1,5 +1,8 @@
 <?php 
 
+header("Access-Control-Allow-Origin: *");
+
+
 $opts = array(
   'http'=>array(
     'method'=>"GET",
@@ -17,6 +20,8 @@ unset($params['url']);
 $url = $_GET['url'].'?'.http_build_query($params);
 
 $file = file_get_contents($url, false, $context);
+
+
 
 echo $file;
 
