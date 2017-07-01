@@ -34,7 +34,7 @@ function getPrices() {
   $("#ola").empty();
   $("#uber").empty();
 
-  $.ajax({url: "http://localhost:5000",
+  $.ajax({url: "/ola.php",
     data: {"url": olaPricesURL, "pickup_lat" : startLat, "pickup_lng" : startLong, "drop_lat" : endLat, "drop_lng" : endLong},
     headers: {"X-APP-TOKEN" : olaToken},
     method: "GET",
